@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MetaCare IoT — Metabolic Syndrome Monitoring</title>
+  <meta name="description" content="IoT healthcare dashboard for monitoring patients with metabolic syndrome.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="images/logo.svg" alt="MetaCare logo" class="brand-logo" width="40" height="40">
+        <span>MetaCare <strong>IoT</strong></span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#intro">About</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#patient">Patient</a></li>
+          <li><a href="#alerts">Alerts</a></li>
+          <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="intro" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">IoT Healthcare System</p>
+          <h1>Real-time monitoring of patients with metabolic syndrome</h1>
+          <p class="lead">
+            MetaCare IoT collects data from wearable and bedside sensors — temperature,
+            glucose, heart rate, blood pressure, ECG and oxygen saturation — and shows it
+            to doctors and patients in one clear dashboard. Abnormal readings trigger
+            instant alerts so treatment can be adjusted before complications develop.
+          </p>
+          <div class="hero-actions">
+            <a href="#dashboard" class="btn btn-primary">Open dashboard</a>
+            <a href="#alerts" class="btn btn-outline">View alerts</a>
+          </div>
+        </div>
+        <ul class="hero-stats">
+          <li><span class="stat-value">6</span><span class="stat-label">active sensors</span></li>
+          <li><span class="stat-value">30 s</span><span class="stat-label">update interval</span></li>
+          <li><span class="stat-value">24/7</span><span class="stat-label">monitoring</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="dashboard" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Patient Dashboard</h2>
+          <p class="section-lead">Latest readings from IoT sensors. Last sync: today, 09:42.</p>
+        </div>
+
+        <div class="sensor-grid">
+          <article class="sensor-card status-normal">
+            <div class="sensor-top">
+              <img src="images/thermometer.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">Normal</span>
+            </div>
+            <h3 class="sensor-name">Body Temperature</h3>
+            <p class="sensor-value">36.6 <span class="sensor-unit">°C</span></p>
+            <p class="sensor-meta">Sensor MAX30205 · range 36.1–37.2 °C</p>
+          </article>
+
+          <article class="sensor-card status-warning">
+            <div class="sensor-top">
+              <img src="images/glucose.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">Elevated</span>
+            </div>
+            <h3 class="sensor-name">Blood Glucose</h3>
+            <p class="sensor-value">6.8 <span class="sensor-unit">mmol/L</span></p>
+            <p class="sensor-meta">CGM sensor · fasting norm &lt; 5.6 mmol/L</p>
+          </article>
+
+          <article class="sensor-card status-normal">
+            <div class="sensor-top">
+              <img src="images/heart.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">Normal</span>
+            </div>
+            <h3 class="sensor-name">Heart Rate</h3>
+            <p class="sensor-value">74 <span class="sensor-unit">bpm</span></p>
+            <p class="sensor-meta">PPG wristband · range 60–100 bpm</p>
+          </article>
+
+          <article class="sensor-card status-critical">
+            <div class="sensor-top">
+              <img src="images/pressure.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">High</span>
+            </div>
+            <h3 class="sensor-name">Blood Pressure</h3>
+            <p class="sensor-value">148/94 <span class="sensor-unit">mmHg</span></p>
+            <p class="sensor-meta">Cuff monitor · norm &lt; 130/85 mmHg</p>
+          </article>
+
+          <article class="sensor-card status-normal">
+            <div class="sensor-top">
+              <img src="images/ecg.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">Normal</span>
+            </div>
+            <h3 class="sensor-name">ECG</h3>
+            <p class="sensor-value">Sinus <span class="sensor-unit">rhythm</span></p>
+            <p class="sensor-meta">AD8232 · QRS 92 ms · no arrhythmia</p>
+          </article>
+
+          <article class="sensor-card status-normal">
+            <div class="sensor-top">
+              <img src="images/oxygen.svg" alt="" class="sensor-icon" width="28" height="28">
+              <span class="badge">Normal</span>
+            </div>
+            <h3 class="sensor-name">Oxygen Saturation</h3>
+            <p class="sensor-value">97 <span class="sensor-unit">% SpO₂</span></p>
+            <p class="sensor-meta">Pulse oximeter · range 95–100 %</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="patient" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Patient Information</h2>
+          <p class="section-lead">Basic data and current monitoring status.</p>
+        </div>
+
+        <div class="patient-layout">
+          <article class="card patient-card">
+            <div class="patient-head">
+              <img src="images/patient.svg" alt="" class="patient-avatar" width="48" height="48">
+              <div>
+                <h3>Aigerim Nurlanova</h3>
+                <p class="muted">Patient ID MC-2041 · Outpatient</p>
+              </div>
+            </div>
+            <table class="info-table">
+              <tbody>
+                <tr><th scope="row">Age</th><td>52</td></tr>
+                <tr><th scope="row">Sex</th><td>Female</td></tr>
+                <tr><th scope="row">Height / Weight</th><td>164 cm / 86 kg</td></tr>
+                <tr><th scope="row">BMI</th><td>32.0 (obesity class I)</td></tr>
+                <tr><th scope="row">Waist circumference</th><td>96 cm</td></tr>
+                <tr><th scope="row">Diagnosis</th><td>Metabolic syndrome, arterial hypertension</td></tr>
+                <tr><th scope="row">Attending physician</th><td>Dr. S. Akhmetov, endocrinologist</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="card status-card">
+            <h3>Monitoring Status</h3>
+            <ul class="status-list">
+              <li><span>Monitoring</span><span class="badge badge-normal">Active</span></li>
+              <li><span>Gateway connection</span><span class="badge badge-normal">Online</span></li>
+              <li><span>Wristband battery</span><span>78 %</span></li>
+              <li><span>Cuff monitor battery</span><span>41 %</span></li>
+              <li><span>Last sync</span><span>09:42</span></li>
+              <li><span>Alerts today</span><span class="badge badge-critical">2</span></li>
+            </ul>
+            <div class="card-actions">
+              <a href="#alerts" class="btn btn-primary">See alerts</a>
+              <a href="#contact" class="btn btn-outline">Contact doctor</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="alerts" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Alerts</h2>
+          <p class="section-lead">Examples of normal and abnormal measurements from the last 24 hours.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="alert-table">
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Parameter</th>
+                <th scope="col">Value</th>
+                <th scope="col">Normal range</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>09:42</td><td>Blood Pressure</td><td>148/94 mmHg</td><td>&lt; 130/85</td>
+                <td><span class="badge badge-critical">High</span></td>
+              </tr>
+              <tr>
+                <td>09:42</td><td>Heart Rate</td><td>74 bpm</td><td>60–100</td>
+                <td><span class="badge badge-normal">Normal</span></td>
+              </tr>
+              <tr>
+                <td>08:10</td><td>Blood Glucose (fasting)</td><td>6.8 mmol/L</td><td>3.9–5.5</td>
+                <td><span class="badge badge-warning">Elevated</span></td>
+              </tr>
+              <tr>
+                <td>07:30</td><td>Body Temperature</td><td>36.6 °C</td><td>36.1–37.2</td>
+                <td><span class="badge badge-normal">Normal</span></td>
+              </tr>
+              <tr>
+                <td>03:15</td><td>Oxygen Saturation</td><td>93 %</td><td>95–100</td>
+                <td><span class="badge badge-warning">Low</span></td>
+              </tr>
+              <tr>
+                <td>02:40</td><td>ECG</td><td>Sinus rhythm</td><td>Sinus rhythm</td>
+                <td><span class="badge badge-normal">Normal</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <form class="alert-form" action="#" method="get">
+          <label for="email">Get alerts by e-mail</label>
+          <div class="form-row">
+            <input type="email" id="email" name="email" placeholder="doctor@clinic.kz" required>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-brand">MetaCare <strong>IoT</strong></p>
+        <p>IoT healthcare system for monitoring patients with metabolic syndrome.<br>Version 1.0 · Seminar 3, Web Programming.</p>
+      </div>
+      <div>
+        <h3>Contacts</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:gazizbolat2@gmail.com">gazizbolat2@gmail.com</a></li>
+          <li>Almaty, Kazakhstan</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Sections</h3>
+        <ul class="footer-links">
+          <li><a href="#intro">About</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+          <li><a href="#patient">Patient</a></li>
+          <li><a href="#alerts">Alerts</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 MetaCare IoT. Educational project.</p>
+  </footer>
+
+</body>
+</html>
