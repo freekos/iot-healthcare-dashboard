@@ -70,8 +70,8 @@ section {
   padding-top: 56px;
   background-color: var(--paper);
   background-image:
-    repeating-radial-gradient(ellipse 140% 90% at 85% 120%, transparent 0 26px, var(--line) 26px 27px),
-    repeating-radial-gradient(ellipse 90% 70% at 8% -20%, transparent 0 22px, var(--line) 22px 23px);
+    repeating-radial-gradient(circle at 88% 115%, transparent 0 30px, rgba(16, 25, 43, 0.13) 30px 32px),
+    repeating-radial-gradient(circle at 6% -30%, transparent 0 34px, rgba(16, 25, 43, 0.05) 34px 36px);
 }
 
 .header-inner {
@@ -632,9 +632,13 @@ td a {
 }
 
 .plan-form fieldset {
-  margin: 0;
+  margin: 16px 0 0;
   padding: 0;
   border: none;
+}
+
+.plan-form legend {
+  margin-top: 0;
 }
 
 .chips {
@@ -718,7 +722,7 @@ td a {
 .site-footer {
   background-color: var(--ink);
   background-image:
-    repeating-radial-gradient(ellipse 120% 100% at 90% 130%, transparent 0 26px, rgba(243, 239, 230, 0.08) 26px 27px);
+    repeating-radial-gradient(circle at 92% 140%, transparent 0 30px, rgba(243, 239, 230, 0.1) 30px 32px);
   color: rgba(243, 239, 230, 0.75);
   padding: 56px 0 36px;
 }
