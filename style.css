@@ -178,6 +178,11 @@ ul {
   margin-left: 0.5rem;
 }
 
+.main-nav .btn-primary,
+.main-nav .btn-primary:hover {
+  color: #fff;
+}
+
 /* ---------- Hero / introduction ---------- */
 #intro {
   background: linear-gradient(135deg, #ecfeff 0%, #f0fdfa 50%, #f8fafc 100%);
