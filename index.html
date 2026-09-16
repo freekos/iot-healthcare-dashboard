@@ -6,6 +6,9 @@
   <title>MetaCare IoT — Metabolic Syndrome Monitoring</title>
   <meta name="description" content="IoT healthcare dashboard for monitoring patients with metabolic syndrome.">
   <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,8 +16,8 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a href="#top" class="brand">
-        <img src="images/logo.svg" alt="MetaCare logo" class="brand-logo" width="40" height="40">
-        <span>MetaCare <strong>IoT</strong></span>
+        <img src="images/logo.svg" alt="MetaCare logo" class="brand-logo" width="36" height="36">
+        <span>MetaCare<em>IoT</em></span>
       </a>
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
@@ -22,9 +25,10 @@
           <li><a href="#dashboard">Dashboard</a></li>
           <li><a href="#patient">Patient</a></li>
           <li><a href="#alerts">Alerts</a></li>
-          <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+      <p class="live-pill"><span class="live-dot"></span>LIVE · 09:42:17</p>
     </div>
   </header>
 
@@ -33,140 +37,193 @@
     <section id="intro" class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="eyebrow">IoT Healthcare System</p>
-          <h1>Real-time monitoring of patients with metabolic syndrome</h1>
+          <p class="eyebrow">IoT healthcare system / metabolic syndrome</p>
+          <h1>Every heartbeat, every reading — <span class="accent">on one screen</span>.</h1>
           <p class="lead">
-            MetaCare IoT collects data from wearable and bedside sensors — temperature,
-            glucose, heart rate, blood pressure, ECG and oxygen saturation — and shows it
-            to doctors and patients in one clear dashboard. Abnormal readings trigger
-            instant alerts so treatment can be adjusted before complications develop.
+            MetaCare IoT streams data from wearable and bedside sensors — temperature,
+            glucose, heart rate, blood pressure, ECG and oxygen saturation — into a single
+            monitoring dashboard. Abnormal values raise an alert instantly, so the doctor
+            can adjust treatment before complications develop.
           </p>
           <div class="hero-actions">
             <a href="#dashboard" class="btn btn-primary">Open dashboard</a>
-            <a href="#alerts" class="btn btn-outline">View alerts</a>
+            <a href="#alerts" class="btn btn-ghost">View alerts</a>
           </div>
+          <ul class="hero-stats">
+            <li><span class="stat-value">6</span><span class="stat-label">sensors online</span></li>
+            <li><span class="stat-value">30s</span><span class="stat-label">update interval</span></li>
+            <li><span class="stat-value">24/7</span><span class="stat-label">monitoring</span></li>
+          </ul>
         </div>
-        <ul class="hero-stats">
-          <li><span class="stat-value">6</span><span class="stat-label">active sensors</span></li>
-          <li><span class="stat-value">30 s</span><span class="stat-label">update interval</span></li>
-          <li><span class="stat-value">24/7</span><span class="stat-label">monitoring</span></li>
-        </ul>
+
+        <div class="monitor">
+          <div class="monitor-bar">
+            <span>BED 04 · MC-2041</span>
+            <span>ECG II · 25 mm/s</span>
+          </div>
+          <div class="monitor-screen">
+            <svg class="ecg-trace" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="1000" d="M0 70 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30"/>
+            </svg>
+          </div>
+          <ul class="monitor-readouts">
+            <li class="readout readout-hr"><span class="readout-label">HR</span><span class="readout-value">74</span><span class="readout-unit">bpm</span></li>
+            <li class="readout readout-spo2"><span class="readout-label">SpO₂</span><span class="readout-value">97</span><span class="readout-unit">%</span></li>
+            <li class="readout readout-bp"><span class="readout-label">NIBP</span><span class="readout-value">148/94</span><span class="readout-unit">mmHg</span></li>
+            <li class="readout readout-temp"><span class="readout-label">TEMP</span><span class="readout-value">36.6</span><span class="readout-unit">°C</span></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="dashboard" class="section">
       <div class="container">
         <div class="section-head">
+          <p class="section-index">01</p>
           <h2>Patient Dashboard</h2>
-          <p class="section-lead">Latest readings from IoT sensors. Last sync: today, 09:42.</p>
+          <p class="section-lead">Latest readings from IoT sensors · last sync 09:42</p>
         </div>
 
         <div class="sensor-grid">
-          <article class="sensor-card status-normal">
+          <article class="sensor-card card-ecg status-normal">
             <div class="sensor-top">
-              <img src="images/thermometer.svg" alt="" class="sensor-icon" width="28" height="28">
+              <img src="images/ecg.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">ECG</h3>
               <span class="badge">Normal</span>
             </div>
-            <h3 class="sensor-name">Body Temperature</h3>
-            <p class="sensor-value">36.6 <span class="sensor-unit">°C</span></p>
-            <p class="sensor-meta">Sensor MAX30205 · range 36.1–37.2 °C</p>
+            <svg class="ecg-mini" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true">
+              <path pathLength="1000" d="M0 70 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30 h60 l10 -8 l10 8 h20 l6 6 l6 -56 l6 76 l6 -24 h26 q10 -20 20 0 h30"/>
+            </svg>
+            <p class="sensor-value">Sinus <span class="sensor-unit">rhythm</span></p>
+            <p class="sensor-meta">AD8232 · QRS 92 ms · PR 158 ms · no arrhythmia</p>
           </article>
 
-          <article class="sensor-card status-warning">
+          <article class="sensor-card card-hr status-normal">
             <div class="sensor-top">
-              <img src="images/glucose.svg" alt="" class="sensor-icon" width="28" height="28">
-              <span class="badge">Elevated</span>
-            </div>
-            <h3 class="sensor-name">Blood Glucose</h3>
-            <p class="sensor-value">6.8 <span class="sensor-unit">mmol/L</span></p>
-            <p class="sensor-meta">CGM sensor · fasting norm &lt; 5.6 mmol/L</p>
-          </article>
-
-          <article class="sensor-card status-normal">
-            <div class="sensor-top">
-              <img src="images/heart.svg" alt="" class="sensor-icon" width="28" height="28">
+              <img src="images/heart.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">Heart Rate</h3>
               <span class="badge">Normal</span>
             </div>
-            <h3 class="sensor-name">Heart Rate</h3>
             <p class="sensor-value">74 <span class="sensor-unit">bpm</span></p>
+            <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <polyline vector-effect="non-scaling-stroke" points="0,18 10,16 20,20 30,14 40,17 50,12 60,15 70,13 80,16 90,11 100,14"/>
+            </svg>
             <p class="sensor-meta">PPG wristband · range 60–100 bpm</p>
           </article>
 
-          <article class="sensor-card status-critical">
+          <article class="sensor-card card-spo2 status-normal">
             <div class="sensor-top">
-              <img src="images/pressure.svg" alt="" class="sensor-icon" width="28" height="28">
+              <img src="images/oxygen.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">Oxygen Saturation</h3>
+              <span class="badge">Normal</span>
+            </div>
+            <p class="sensor-value">97 <span class="sensor-unit">% SpO₂</span></p>
+            <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <polyline vector-effect="non-scaling-stroke" points="0,12 10,11 20,13 30,10 40,12 50,9 60,11 70,10 80,12 90,9 100,10"/>
+            </svg>
+            <p class="sensor-meta">Pulse oximeter · range 95–100 %</p>
+          </article>
+
+          <article class="sensor-card card-bp status-critical">
+            <div class="sensor-top">
+              <img src="images/pressure.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">Blood Pressure</h3>
               <span class="badge">High</span>
             </div>
-            <h3 class="sensor-name">Blood Pressure</h3>
             <p class="sensor-value">148/94 <span class="sensor-unit">mmHg</span></p>
+            <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <polyline vector-effect="non-scaling-stroke" points="0,20 10,19 20,17 30,18 40,15 50,14 60,12 70,11 80,9 90,7 100,6"/>
+            </svg>
             <p class="sensor-meta">Cuff monitor · norm &lt; 130/85 mmHg</p>
           </article>
 
-          <article class="sensor-card status-normal">
+          <article class="sensor-card card-glu status-warning">
             <div class="sensor-top">
-              <img src="images/ecg.svg" alt="" class="sensor-icon" width="28" height="28">
-              <span class="badge">Normal</span>
+              <img src="images/glucose.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">Blood Glucose</h3>
+              <span class="badge">Elevated</span>
             </div>
-            <h3 class="sensor-name">ECG</h3>
-            <p class="sensor-value">Sinus <span class="sensor-unit">rhythm</span></p>
-            <p class="sensor-meta">AD8232 · QRS 92 ms · no arrhythmia</p>
+            <p class="sensor-value">6.8 <span class="sensor-unit">mmol/L</span></p>
+            <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <polyline vector-effect="non-scaling-stroke" points="0,22 10,20 20,21 30,18 40,16 50,17 60,14 70,12 80,13 90,10 100,11"/>
+            </svg>
+            <p class="sensor-meta">CGM sensor · fasting norm &lt; 5.6 mmol/L</p>
           </article>
 
-          <article class="sensor-card status-normal">
+          <article class="sensor-card card-temp status-normal">
             <div class="sensor-top">
-              <img src="images/oxygen.svg" alt="" class="sensor-icon" width="28" height="28">
+              <img src="images/thermometer.svg" alt="" class="sensor-icon" width="22" height="22">
+              <h3 class="sensor-name">Body Temperature</h3>
               <span class="badge">Normal</span>
             </div>
-            <h3 class="sensor-name">Oxygen Saturation</h3>
-            <p class="sensor-value">97 <span class="sensor-unit">% SpO₂</span></p>
-            <p class="sensor-meta">Pulse oximeter · range 95–100 %</p>
+            <p class="sensor-value">36.6 <span class="sensor-unit">°C</span></p>
+            <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true">
+              <polyline vector-effect="non-scaling-stroke" points="0,16 10,16 20,15 30,16 40,15 50,15 60,16 70,15 80,15 90,16 100,15"/>
+            </svg>
+            <p class="sensor-meta">MAX30205 · range 36.1–37.2 °C</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="patient" class="section section-alt">
+    <section id="patient" class="section">
       <div class="container">
         <div class="section-head">
+          <p class="section-index">02</p>
           <h2>Patient Information</h2>
-          <p class="section-lead">Basic data and current monitoring status.</p>
+          <p class="section-lead">Basic data and current monitoring status</p>
         </div>
 
         <div class="patient-layout">
-          <article class="card patient-card">
+          <article class="panel patient-card">
             <div class="patient-head">
-              <img src="images/patient.svg" alt="" class="patient-avatar" width="48" height="48">
+              <span class="patient-avatar"><img src="images/patient.svg" alt="" class="sensor-icon" width="22" height="22"></span>
               <div>
                 <h3>Aigerim Nurlanova</h3>
-                <p class="muted">Patient ID MC-2041 · Outpatient</p>
+                <p class="mono muted">ID MC-2041 · F · 52 y · outpatient</p>
               </div>
+              <span class="badge badge-normal">Monitored</span>
             </div>
             <table class="info-table">
               <tbody>
                 <tr><th scope="row">Age</th><td>52</td></tr>
                 <tr><th scope="row">Sex</th><td>Female</td></tr>
                 <tr><th scope="row">Height / Weight</th><td>164 cm / 86 kg</td></tr>
-                <tr><th scope="row">BMI</th><td>32.0 (obesity class I)</td></tr>
+                <tr><th scope="row">BMI</th><td>32.0 · obesity class I</td></tr>
                 <tr><th scope="row">Waist circumference</th><td>96 cm</td></tr>
                 <tr><th scope="row">Diagnosis</th><td>Metabolic syndrome, arterial hypertension</td></tr>
                 <tr><th scope="row">Attending physician</th><td>Dr. S. Akhmetov, endocrinologist</td></tr>
+                <tr><th scope="row">Monitoring since</th><td>02 Sep 2026</td></tr>
               </tbody>
             </table>
           </article>
 
-          <article class="card status-card">
+          <article class="panel status-card">
             <h3>Monitoring Status</h3>
             <ul class="status-list">
               <li><span>Monitoring</span><span class="badge badge-normal">Active</span></li>
-              <li><span>Gateway connection</span><span class="badge badge-normal">Online</span></li>
-              <li><span>Wristband battery</span><span>78 %</span></li>
-              <li><span>Cuff monitor battery</span><span>41 %</span></li>
-              <li><span>Last sync</span><span>09:42</span></li>
+              <li><span>Gateway</span><span class="badge badge-normal">Online</span></li>
+              <li><span>Last sync</span><span class="mono">09:42:17</span></li>
               <li><span>Alerts today</span><span class="badge badge-critical">2</span></li>
+            </ul>
+            <h4 class="sub-head">Device batteries</h4>
+            <ul class="battery-list">
+              <li>
+                <span class="battery-label">Wristband <span class="mono">78%</span></span>
+                <span class="battery-bar"><span class="battery-fill fill-78"></span></span>
+              </li>
+              <li>
+                <span class="battery-label">Cuff monitor <span class="mono">41%</span></span>
+                <span class="battery-bar"><span class="battery-fill fill-41"></span></span>
+              </li>
+              <li>
+                <span class="battery-label">CGM sensor <span class="mono">92%</span></span>
+                <span class="battery-bar"><span class="battery-fill fill-92"></span></span>
+              </li>
             </ul>
             <div class="card-actions">
               <a href="#alerts" class="btn btn-primary">See alerts</a>
-              <a href="#contact" class="btn btn-outline">Contact doctor</a>
+              <a href="#contact" class="btn btn-ghost">Contact doctor</a>
             </div>
           </article>
         </div>
@@ -176,8 +233,22 @@
     <section id="alerts" class="section">
       <div class="container">
         <div class="section-head">
+          <p class="section-index">03</p>
           <h2>Alerts</h2>
-          <p class="section-lead">Examples of normal and abnormal measurements from the last 24 hours.</p>
+          <p class="section-lead">Examples of normal and abnormal measurements · last 24 h</p>
+        </div>
+
+        <div class="alert-examples">
+          <article class="alert-box alert-ok">
+            <h3 class="alert-kicker">Normal measurement</h3>
+            <p class="alert-reading">Heart rate <strong>74 bpm</strong> · 09:42</p>
+            <p class="alert-text">Within 60–100 bpm. No action required, next check in 30 s.</p>
+          </article>
+          <article class="alert-box alert-bad">
+            <h3 class="alert-kicker">Abnormal measurement</h3>
+            <p class="alert-reading">Blood pressure <strong>148/94 mmHg</strong> · 09:42</p>
+            <p class="alert-text">Above 130/85. Alert sent to Dr. Akhmetov, repeat measurement in 15 min.</p>
+          </article>
         </div>
 
         <div class="table-wrap">
@@ -192,28 +263,28 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>09:42</td><td>Blood Pressure</td><td>148/94 mmHg</td><td>&lt; 130/85</td>
+              <tr class="row-critical">
+                <td class="mono">09:42</td><td>Blood Pressure</td><td class="mono">148/94 mmHg</td><td class="mono">&lt; 130/85</td>
                 <td><span class="badge badge-critical">High</span></td>
               </tr>
-              <tr>
-                <td>09:42</td><td>Heart Rate</td><td>74 bpm</td><td>60–100</td>
+              <tr class="row-normal">
+                <td class="mono">09:42</td><td>Heart Rate</td><td class="mono">74 bpm</td><td class="mono">60–100</td>
                 <td><span class="badge badge-normal">Normal</span></td>
               </tr>
-              <tr>
-                <td>08:10</td><td>Blood Glucose (fasting)</td><td>6.8 mmol/L</td><td>3.9–5.5</td>
+              <tr class="row-warning">
+                <td class="mono">08:10</td><td>Blood Glucose (fasting)</td><td class="mono">6.8 mmol/L</td><td class="mono">3.9–5.5</td>
                 <td><span class="badge badge-warning">Elevated</span></td>
               </tr>
-              <tr>
-                <td>07:30</td><td>Body Temperature</td><td>36.6 °C</td><td>36.1–37.2</td>
+              <tr class="row-normal">
+                <td class="mono">07:30</td><td>Body Temperature</td><td class="mono">36.6 °C</td><td class="mono">36.1–37.2</td>
                 <td><span class="badge badge-normal">Normal</span></td>
               </tr>
-              <tr>
-                <td>03:15</td><td>Oxygen Saturation</td><td>93 %</td><td>95–100</td>
+              <tr class="row-warning">
+                <td class="mono">03:15</td><td>Oxygen Saturation</td><td class="mono">93 %</td><td class="mono">95–100</td>
                 <td><span class="badge badge-warning">Low</span></td>
               </tr>
-              <tr>
-                <td>02:40</td><td>ECG</td><td>Sinus rhythm</td><td>Sinus rhythm</td>
+              <tr class="row-normal">
+                <td class="mono">02:40</td><td>ECG</td><td class="mono">Sinus rhythm</td><td class="mono">Sinus rhythm</td>
                 <td><span class="badge badge-normal">Normal</span></td>
               </tr>
             </tbody>
@@ -235,8 +306,8 @@
   <footer class="site-footer" id="contact">
     <div class="container footer-inner">
       <div>
-        <p class="footer-brand">MetaCare <strong>IoT</strong></p>
-        <p>IoT healthcare system for monitoring patients with metabolic syndrome.<br>Version 1.0 · Seminar 3, Web Programming.</p>
+        <p class="footer-brand">MetaCare<em>IoT</em></p>
+        <p class="muted">IoT healthcare system for monitoring patients with metabolic syndrome.<br>Version 1.0 · Seminar 3, Web Programming.</p>
       </div>
       <div>
         <h3>Contacts</h3>
@@ -255,7 +326,7 @@
         </ul>
       </div>
     </div>
-    <p class="copyright">© 2026 MetaCare IoT. Educational project.</p>
+    <p class="copyright mono">© 2026 MetaCare IoT · educational project</p>
   </footer>
 
 </body>
